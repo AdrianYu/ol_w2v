@@ -10,7 +10,7 @@ By now, I would assume that you've already tried the original word2vec on your n
 # the implementation
 This project implements the skip-gram with nagetive sampling model in an online fashion. The model itself is quit clear, so I won't address here. The word embeddings are trained using RMSProp and the context embeddings are trained using SGD. (Why is that? First I use RMSProp to train both embeddings which does not work. The reason is that although I can dispatch words to specific trainer, the context words should be globally visible. I must avoid using locks as best as I can. So the gradients would be too noisy for the context words where RMSProp preforms badly.)
 
-This project only implements the online word2vec and is only a draft for now. It is fast. It can process billions of clicks in hours. To use it in production system however, much work still need to be done. Hopefully I will have the time to complete it but I cann't make any promises. Finger crossed.
+This project only implements the online word2vec and is only a draft for now. It is not well documented if not at all, all configurations are hard-coded in the codes and it lacks proper logging. It is fast though. It can process billions of clicks in hours. To use it in production system however, much work still need to be done. Hopefully I will have the time to complete it but I cann't make any promises. Finger crossed.
 
 # dependencies
 * [boost](http://www.boost.org/)
